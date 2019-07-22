@@ -121,15 +121,15 @@ end
 # find the number of points scored by a given player
 def num_points_scored(player)
   game_hash.each do |location, team_data|
-    #binding.pry
+    binding.pry
     team_data[:players].each do |player_hash|
-      #binding.pry
+      binding.pry
       if player_hash[:player_name] == player
-        #binding.pry
+        binding.pry
         return player_hash[:points]
       end
     end
   end
 end
 
-#num_points_scored("Reggie Evans")
+num_points_scored("Reggie Evans")
