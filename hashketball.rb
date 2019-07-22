@@ -210,8 +210,12 @@ def most_points_scored
 
   game_hash.each do |location, team_data|
     team_data[:players].each do |player_hash|
-      if !most_points_name
+      if !most_points_name || (player_hash[:points] > most_points_number)
         most_points_name = player_hash[:player_name]
         most_points_number = player_hash[:points]
-      else
-        if most
+      end
+    end
+  end
+
+  most_points_name
+end
