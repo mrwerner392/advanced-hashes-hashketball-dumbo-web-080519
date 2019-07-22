@@ -249,3 +249,20 @@ def player_with_longest_name
 
   longest_name
 end
+
+# check if the player with the longest name had the most steals
+def long_name_steals_a_ton?
+  most_steals_number = nil
+  most_steals_name = nil
+
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player_hash|
+      if !most_steals_name or (player_hash[:steals] > most_steals_number)
+        most_steals_name = player_hash[:player_name]
+        most_steals_number = player_hash[:steals]
+      end
+    end
+  end
+
+  most_steals_name == player_with_longest_name ? true : false
+end
