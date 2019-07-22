@@ -193,14 +193,25 @@ def big_shoe_rebounds
       if !biggest_shoe_rebounds
         biggest_shoe_rebounds = player_hash[:rebounds]
         biggest_shoe_size = player_hash[:shoe]
-      else
-        if player_hash[:shoe] > biggest_shoe_size
+      elsif player_hash[:shoe] > biggest_shoe_size
           biggest_shoe_size = player_hash[:shoe]
           biggest_shoe_rebounds = player_hash[:rebounds]
-        end
       end
     end
   end
 
   biggest_shoe_rebounds
 end
+
+# return the name of the player with the most points scored
+def most_points_scored
+  most_points_number = nil
+  most_points_name = nil
+
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player_hash|
+      if !most_points_name
+        most_points_name = player_hash[:player_name]
+        most_points_number = player_hash[:points]
+      else
+        if most
