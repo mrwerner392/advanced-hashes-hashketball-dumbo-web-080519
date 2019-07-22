@@ -230,5 +230,5 @@ def winning_team
     location == :home ? home_team_points = points : away_team_points = points
   end
 
-  home_team_points > away_team_points ? game_hash[:home] : game_hash[:away]
+  home_team_points > away_team_points ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
 end
