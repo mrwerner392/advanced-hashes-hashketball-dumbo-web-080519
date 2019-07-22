@@ -187,7 +187,7 @@ end
 def big_shoe_rebounds
   #biggest_shoe_size
   #biggest_shoe_name
-  
+
   game_hash.each do |location, team_data|
     team_data[:players].each do |player_hash|
       if !biggest_shoe_rebounds
