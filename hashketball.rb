@@ -190,12 +190,9 @@ def big_shoe_rebounds
 
   game_hash.each do |location, team_data|
     team_data[:players].each do |player_hash|
-      if !biggest_shoe_rebounds
+      if !biggest_shoe_rebounds || (player_hash[:shoe] > biggest_shoe_size)
         biggest_shoe_rebounds = player_hash[:rebounds]
         biggest_shoe_size = player_hash[:shoe]
-      elsif player_hash[:shoe] > biggest_shoe_size
-          biggest_shoe_size = player_hash[:shoe]
-          biggest_shoe_rebounds = player_hash[:rebounds]
       end
     end
   end
