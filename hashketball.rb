@@ -1,7 +1,8 @@
 # Write your code here!
 def game_hash
   game_data = {}
-  game_data.keys = [:home, :away]
+  game_data[:home] = {}
+  game_data[:away] = {}
 
   game_data[:home][:team_name] = "Brooklyn Nets"
   game_data[:home][:colors] = ["Black", "White"]
