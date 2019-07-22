@@ -1,4 +1,6 @@
-# Write your code here!
+require "pry"
+
+# build a hash with team data
 def game_hash
   game_data = {}
   game_data[:home] = {}
@@ -115,3 +117,7 @@ def game_hash
   game_data
 
 end
+
+# find the number of points scored by a given player
+def num_points_scored(player)
+  data = game_hash
