@@ -118,7 +118,7 @@ def game_hash
 
 end
 
-# find the number of points scored by a given player
+# return the number of points scored by a given player
 def num_points_scored(player)
   game_hash.each do |location, team_data|
     team_data[:players].each do |player_hash|
@@ -129,7 +129,7 @@ def num_points_scored(player)
   end
 end
 
-# find the shoe_size scored by a given player
+# return the shoe_size scored by a given player
 def shoe_size(player)
   game_hash.each do |location, team_data|
     team_data[:players].each do |player_hash|
@@ -140,11 +140,20 @@ def shoe_size(player)
   end
 end
 
-# find the colors of a given team
+# return the colors of a given team
 def team_colors(team)
   game_hash.each do |location, team_data|
     if team_data[:team_name] == team
       return team_data[:colors]
     end
   end
+end
+
+# return the team names
+def team_names
+  teams = []
+  game_hash.each do |location, team_data|
+    teams.push team_data[:team_name]
+  end
+  teams
 end
