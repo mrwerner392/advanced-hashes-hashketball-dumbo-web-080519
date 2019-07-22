@@ -232,3 +232,20 @@ def winning_team
 
   home_team_points > away_team_points ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
 end
+
+# return the longest player name
+def player_with_longest_name
+  longest_name = nil
+  longest_name_length = nil
+
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player_hash|
+      if !longest_name || (player_hash[:player_name].length > longest_name_length)
+        longest_name = player_hash[:player_name]
+        longest_name_length = longest_name.length
+      end
+    end
+  end
+
+  longest_name
+end
