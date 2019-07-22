@@ -56,7 +56,7 @@ def game_hash
     blocks: 11,
     slam_dunks: 1
     } ]
-  
+
   game_data[:away][:team_name] = "Charlotte Hornets"
   game_data[:away][:colors] = ["Turquoise", "Purple"]
   game_data[:away][:players] = [ {
@@ -110,13 +110,3 @@ def game_hash
     blocks: 5,
     slam_dunks: 12
     } ]
-
-
-
-
-
-
-
-
-
-
