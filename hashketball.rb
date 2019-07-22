@@ -174,7 +174,7 @@ end
 # return all the stats for a given player
 def player_stats(player)
   game_hash.each do |location, team_data|
-    team[:players].each do |player_hash|
+    team_data[:players].each do |player_hash|
       if player_hash[:player_name] == player
         player_hash.delete(:player_name)
         return player_hash
