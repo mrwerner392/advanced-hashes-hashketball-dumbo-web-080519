@@ -157,3 +157,17 @@ def team_names
   end
   teams
 end
+
+# returns the jersey numbers of a given team
+def player_numbers(team)
+  numbers = []
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == team
+      team_data[:players].each do |player_hash|
+        numbers.push(player_hash[:number])
+      end
+    end
+  end
+  numbers
+end
+      
